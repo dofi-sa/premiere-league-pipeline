@@ -6,6 +6,7 @@ import requests
 import pandas as pd
 from sqlalchemy import create_engine
 import io
+import os
 
 # ------------------------------------------------------------------
 # CONFIGURATION ET ARGUMENTS PAR DÉFAUT
@@ -26,7 +27,7 @@ def extract_data(**kwargs):
     url = "https://api.football-data.org/v4/competitions/PL/matches"
     
     # Remplacez par votre clé API Football-Data si nécessaire
-    headers = {"X-Auth-Token": "fa6b9c258e3447c9b48e184614e4e625"}
+    headers = {"X-Auth-Token": os.getenv("FOOTBALL_API_TOKEN")}
     
     response = requests.get(url, headers=headers)
     response.raise_for_status()
