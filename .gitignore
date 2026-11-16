@@ -1,5 +1,18 @@
+# Secrets
+.env
+
+# Airflow
 logs/
+plugins/
+
+# Python
 __pycache__/
 *.pyc
-.env
-f.env
+*.pyo
+*.pyd
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
